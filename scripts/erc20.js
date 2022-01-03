@@ -22,10 +22,7 @@ async function main() {
 
   // We get the contract to deploy
   const IcuryErc20 = await hre.ethers.getContractFactory("IcuryErc20");
-  const icuryErc20 = await hre.upgrades.deployProxy(IcuryErc20, [42]);
-
-  //   const greeter = await Greeter.deploy("Hello, Hardhat!");
-
+  const icuryErc20 = await IcuryErc20.deploy();
   await icuryErc20.deployed();
 
   // console.log("Greeter deployed to:", greeter.address);

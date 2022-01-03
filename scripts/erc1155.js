@@ -23,7 +23,9 @@ async function main() {
   //   console.log("Greeter deployed to:", greeter.deployTransaction);
 
   const IcuryErc1155 = await hre.ethers.getContractFactory("IcuryErc1155");
-  const icuryErc1155 = await hre.upgrades.deployProxy(IcuryErc1155, [42]);
+  const icuryErc1155 = await IcuryErc1155.deploy();
+
+  //   const icuryErc1155 = await hre.upgrades.deployProxy(IcuryErc1155, [42]);
 
   //   const greeter = await Greeter.deploy("Hello, Hardhat!");
 
